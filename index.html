@@ -1,0 +1,771 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="ru">
+	<head>
+		<link rel="stylesheet" href="css/style.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="preload" href="css/style.css" as="style">
+		<link rel="preload" href="fonts/InterRegular.woff2" as="font" crossorigin="">
+		<link rel="preload" href="fonts/InterMedium.woff2" as="font" crossorigin="">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+		<title>Аналитика | Лендинг</title>
+	</head>
+	<body>
+
+		<div class="modal">
+			<div class="modal__bg js-close-modal">
+			</div>
+			<div class="modal__window" id="question">
+				<button class="modal__close-btn js-close-modal" data-id="question">
+				</button>
+				<div class="accept-msg body2-text">
+					Спасибо за ваш вопрос! Мы ответим на него в ближайшее время!
+				</div>
+				<form method="POST">
+					<div class="modal__title h3-text">
+						Задать вопрос
+					</div>
+					<div class="modal__desc body2-text">
+						Задайте интересующий вас вопрос и наши менеджеры ответят на него в ближайшее время!
+					</div>
+					<div class="modal__input-field">
+						<input style="display: none" name="subject" value="Задать вопрос">
+						<label class="body2-text">Ваш вопрос<span>&nbsp;*</span></label>
+						<input class="modal__input body2-text requierd-input" type="text" placeholder="Что вы хотите узнать?" name="question" data-id="question">
+						<label class="body2-text">Ваш E-mail<span>&nbsp;*</span></label>
+						<input class="modal__input body2-text requierd-input requierd-input--error-email" type="text" placeholder="Напишите ваш e-mail" name="email" data-id="email">
+						<label class="body2-text">Ваш номер телефона</label>
+						<input class="modal__input body2-text" type="text" onkeyup="this.value = this.value.replace(/[^\d]/g,'');" name="phone" placeholder="Напишите ваш номер телефона" data-id="phone">
+					</div>
+					<button type="button" class="modal__accept-btn prm-button button-text">Оправить</button>
+				</form>
+			</div>
+			<div class="modal__window" id="year-meat_market">
+				<button class="modal__close-btn js-close-modal" data-id="year-meat_market">
+				</button>
+				<div class="modal__title body1-text">
+					Представляет исследование мясной отрасли РФ за период от 1 года. Всесторонний обзор мирового и российского рынка мяса, влияние текущей экономической ситуации, прогноз развития рынка в среднесрочной перспективе.
+				</div>
+				<div class="modal__desc body2-text">
+					&#183; Обзор экономики и аграрного сектора в мире и РФ.<br>
+					&#183; Эпизоотическая ситуация в мире и РФ<br>
+					&#183; Обзор рынка животноводства и мяса в мире и РФ<br>
+					&#183; Ценовая конъюктура мясного рынка РФ<br>
+					&#183; Прогнозы на 2023 ГОД<br>
+					&#183; Аналитическая записка – краткая методология<br>
+				</div>
+			</div>
+			<div class="modal__window" id="month-meat_market">
+				<button class="modal__close-btn js-close-modal" data-id="month-meat_market">
+				</button>
+				<div class="modal__title body1-text">
+					Содержит исследование мясной отрасли РФ с детализацией по основным направлениям:
+				</div>
+				<div class="modal__desc body2-text">
+					&#183; Отечественное животноводство (КРС, свиньи, птица и пр.);<br>
+					&#183; Отечественное производство мяса (говядина, свинина, мясо птицы и пр.);<br>
+					&#183; Отечественное производство мясной продукции (колбасы, полуфабрикаты из мяса, консервы и пр.);<br>
+					&#183; Импорт мяса, мясной продукции, скота и птицы в живом весе.<br>
+				</div>
+			</div>
+			<div class="modal__window" id="week-meat_market">
+				<button class="modal__close-btn js-close-modal" data-id="week-meat_market">
+				</button>
+				<div class="modal__title body1-text">
+					Содержит еженедельные аналитические обзоры ключевых событий за прошедшую неделю:
+				</div>
+				<div class="modal__desc body2-text">
+					&#183; Ключевые события;<br>
+					&#183; Цифры недели;<br>
+					&#183; Подробный анализ ситуации.<br>
+				</div>
+			</div>
+			<div class="modal__window" id="kpc_market">
+				<button class="modal__close-btn js-close-modal" data-id="kpc_market">
+				</button>
+				<div class="modal__title body1-text">
+					Содержит детальный анализ по говядине (КРС):
+				</div>
+				<div class="modal__desc body2-text">
+					&#183; Выявление факторов наиболее повлиявших на развитие отрасли за отчетный период;<br>
+					&#183; Сравнительные таблицы по говядине (по регионам, по видам продукции/сырья);<br>
+					&#183; Динамика показателей по говядине;<br>
+					&#183; Структурные изменения отрасли (по регионам, по видам продукции);<br>
+					&#183; Оценка ценовой конъюнктуры рынка КРС;<br>
+					&#183; Сравнение показателей за предыдущие периоды.<br>
+				</div>
+			</div>
+			<div class="modal__window" id="pork_market">
+				<button class="modal__close-btn js-close-modal" data-id="pork_market">
+				</button>
+				<div class="modal__title body1-text">
+					Содержит детальный анализ по свинине:
+				</div>
+				<div class="modal__desc body2-text">
+					&#183; Выявление факторов повлиявших на развитие отрасли за отчетный период;<br>
+					&#183; Сравнительные таблицы по свинине (по регионам, по видам продукции/сырья);<br>
+					&#183; Динамика показателей по свинине;<br>
+					&#183; Структурные изменения отрасли (по регионам, по видам продукции);<br>
+					&#183; Оценка ценовой конъюнктуры рынка свинины;<br>
+					&#183; Сравнение показателей за предыдущие периоды.<br>
+				</div>
+			</div>
+			<div class="modal__window" id="bird_market">
+				<button class="modal__close-btn js-close-modal" data-id="bird_market">
+				</button>
+				<div class="modal__title body1-text">
+					Содержит детальный анализ по мясу птицы:
+				</div>
+				<div class="modal__desc body2-text">
+					&#183; Выявление факторов повлиявших на развитие отрасли за отчетный период;<br>
+					&#183; Сравнительные таблицы по мясу птицы (по регионам, по видам продукции/сырья);<br>
+					&#183; Динамика показателей по мясу птицы;<br>
+					&#183; Структурные изменения отрасли (по регионам, по видам продукции);<br>
+					&#183; Оценка ценовой конъюнктуры рынка по птице;<br>
+					&#183; Сравнение показателей за предыдущие периоды.<br>
+				</div>
+			</div>
+			<div class="modal__window" id="manual">
+				<button class="modal__close-btn js-close-modal" data-id="manual">
+				</button>
+				<div class="modal__title body1-text">
+					Инструкция по подбору отчета:
+				</div>
+				<div class="modal__desc body2-text">
+					1. Сформулируйте ваш запрос.<br>
+					2. Определите, какие показатели вам необходим для планирования или анализа?<br>
+					3. Определите - за какой период необходим анализ.<br><br>
+					<b>Пример</b>:<br>
+					1. Я представитель птицефабрики, мне необходимо спланировать закуп кормов, продуктовую линейку и геораспространения продукции.<br>
+					2. Полный отчет по рынку птицы.<br>
+					3. Статистика за год.<br><br>
+					<b>Вам подойдёт</b>:<br>
+					Вариант 1: ежемесячный отчет по мясу птицы + годовой отчет по мясному рынку.<br>
+					Вариант 2: собрать из конструктора отчет под формулы вашего планирования.<br>
+					Вариант 3: оставьте заявку и менеджер сам подберет нужный отчет.<br>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__container">
+					<div class='header__left'>
+						<img class="header__logo" src="img/logo.svg" alt="Логотип Meatinfo">
+						<nav class="header__nav">
+							<ul class="header__nav-list">
+								<li class="header__nav-item">
+									<a href="#formats" class="header__nav-link menu-item-text">Форматы</a>
+								</li>
+								<li class="header__nav-item">
+									<a href="#advantages" class="header__nav-link menu-item-text">Преимущества</a>
+								</li>
+								<li class="header__nav-item">
+									<a href="#cases" class="header__nav-link menu-item-text">Кейсы</a>
+								</li>
+								<li class="header__nav-item">
+									<a href="#faq" class="header__nav-link menu-item-text">FAQ</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="header__right">
+						<div class="header__number button-text">
+							<a href="tel:+78124253265">
+								+7 812 425-32-65
+							</a>
+						</div>
+						<button class="header__button prm-button button-text js-open-modal" data-id="question">
+							Задать вопрос
+						</button>
+					</div>
+				</div>
+			</header>
+			<main class="main">
+				<div class="section">
+					<div class="section__top">
+						<img class="section__image" src="img/image_report.png" alt="Пример отчёта">
+						<div class="section__top-field">
+							<h1 class="section__title section__title--desctop-left h1-text">
+								Computer vision AI solutions for manufacturing
+							</h1>
+							<div class="section__description section__description--desctop-left body1-text">
+								Level up your bottom line and cut expences with power of AI automation
+							</div>
+							<div class="section__btns-group">
+								<a href="https://devstarsonline.com/booking" target="_blank" class="section__btn button-text prm-button prm-button--big-pd">
+									Book a free strategy call
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="section__bottom">
+						<div class="section__cards-field">
+							<div class="section__card">
+								<div class="section__card-value h2-text">
+									78%
+								</div>
+								<div class="section__card-desc body2-text">
+									точность прогноза
+								</div>
+							</div>
+							<div class="section__card">
+								<div class="section__card-value h2-text">
+									20+
+								</div>
+								<div class="section__card-desc body2-text">
+									лет накопленной статистики
+								</div>
+							</div>
+							<div class="section__card">
+								<div class="section__card-value h2-text">
+									230+
+								</div>
+								<div class="section__card-desc body2-text">
+									подписчиков аналитики
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section section--pd-vertical section--pd">
+					<h2 class="section__title h2-text">
+						Нам доверяют
+					</h2>
+					<div class="section__logo-field">
+						<img class="section__logo-image" src="img/mir-logo.png" alt="Логотип Мираторг">
+						<img class="section__logo-image" src="img/vtb-logo.png" alt="Логотип ВТБ">
+						<img class="section__logo-image" src="img/sber-logo.png" alt="Логотип Сбербанк">
+						<img class="section__logo-image" src="img/mik-logo.png" alt="Логотип Микоян">
+						<img class="section__logo-image" src="img/cherk-logo.png" alt="Логотип Черкизово">
+						<img class="section__logo-image" src="img/pwc-logo.png" alt="Логотип PWC">
+						<img class="section__logo-image" src="img/mcdon-logo.png" alt="Логотип Вкусно и точка">
+						<img class="section__logo-image" src="img/mars-logo.png" alt="Логотип MARS">
+						<img class="section__logo-image" src="img/carg-logo.png" alt="Логотип Cargill">
+					</div>
+					<div class="section__slider">
+						<div class="quote-swiper swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="swiper-slide__quote body2-text">
+										«Аналитические отчеты meatinfo.ru позволяют искать скрытые причинно-следственные связи  ситуации мясного рынка , объяснять их цифрами.»,
+									</div>
+									<div class="swiper-slide__author body2-text">
+										– Исполнительный директор сети foodretail
+									</div>
+								</div>
+								<div class="swiper-slide">
+										<div class="swiper-slide__quote body2-text">
+											«Аналитика meatinfo.ru позволяет проанализировать ситуацию на мясном рынке в динамике — это необходимо для построения трендов и прогнозов, выявления тенденций. Мы сравниваем данные в разрезе различных временных отрезков, что позволяет рассчитать темпы роста и прироста показателей, отследить изменения, увидеть эффект от влияния факторов.»,
+										</div>
+										<div class="swiper-slide__author body2-text">
+											– Коммерческий директор агрохолдинга
+										</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-slide__quote body2-text">
+										«Аналитика – обязательная часть нашей деятельности, она позволяет предугадать эффективность любых решений и мероприятий. Без данных аналитических отчетов meatinfo.ru  можно вливать средства в решения и промахиваться. Она помогает нам избежать долгих проб и ошибок.»,
+									</div>
+									<div class="swiper-slide__author body2-text">
+										– Собственник мясоперерабатывающего предприятия
+									</div>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+				<div id="formats" class="section section--pd-vertical section--pd section--grey-bg">
+					<h2 class="section__title h2-text">
+						Форматы отчётов
+					</h2>
+					<div class="section__description body2-text">
+						Отчет формируется по запросу компании в течение 3 рабочих дней
+					</div>
+					<div class="section__cards-field section__cards-field--2row">
+						<div class="section__card section__card--big-pd">
+							<div class="section__card-icon">
+								<img src="img/icon_analytic.svg" alt="Логотип аналитика">
+							</div>
+							<div class="section__card-value section__card-value--mg h4-text">
+								Годовой аналитический отчет: весь рынок мяса
+							</div>
+							<div class="section__card-desc body2-text js-open-modal" data-id="year-meat_market">
+								Подробнее
+							</div>
+						</div>
+						<div class="section__card section__card--big-pd">
+							<div class="section__card-icon">
+								<img src="img/icon_analytic.svg" alt="Логотип аналитика">
+							</div>
+							<div class="section__card-value section__card-value--mg h4-text">
+								Ежемесячная аналитика мясного рынка
+							</div>
+							<div class="section__card-desc body2-text js-open-modal" data-id="month-meat_market">
+								Подробнее
+							</div>
+						</div>
+						<div class="section__card section__card--big-pd">
+							<div class="section__card-icon">
+								<img src="img/icon_analytic.svg" alt="Логотип аналитика">
+							</div>
+							<div class="section__card-value section__card-value--mg h4-text">
+								Еженедельная аналитика мясного рынка
+							</div>
+							<div class="section__card-desc body2-text js-open-modal" data-id="week-meat_market">
+								Подробнее
+							</div>
+						</div>
+						<div class="section__card section__card--big-pd">
+							<div class="section__card-icon">
+								<img src="img/icon_cow.svg" alt="Логотип корова">
+							</div>
+							<div class="section__card-value section__card-value--mg h4-text">
+								Аналитическое исследование рынка КРС
+							</div>
+							<div class="section__card-desc body2-text js-open-modal" data-id="kpc_market">
+								Подробнее
+							</div>
+						</div>
+						<div class="section__card section__card--big-pd">
+							<div class="section__card-icon">
+								<img src="img/icon_pig.svg" alt="Логотип свинка">
+							</div>
+							<div class="section__card-value section__card-value--mg h4-text">
+								Аналитическое исследование рынка свинины
+							</div>
+							<div class="section__card-desc body2-text js-open-modal" data-id="pork_market">
+								Подробнее
+							</div>
+						</div>
+						<div class="section__card section__card--big-pd">
+							<div class="section__card-icon">
+								<img src="img/icon_chicken.svg" alt="Логотип курица">
+							</div>
+							<div class="section__card-value section__card-value--mg h4-text">
+								Аналитическое исследование рынка птицы
+							</div>
+							<div class="section__card-desc body2-text js-open-modal" data-id="bird_market">
+								Подробнее
+							</div>
+						</div>
+					</div>
+					<div class="section__description section__description--mt body2-text">
+						Воспользуйтесь бесплатной <button class="section__link body2-text js-open-modal" data-id="manual">инструкцией</button> по выбору оптимального формата отчета для вашего бизнеса.
+					</div>
+					<div class="section__btns-group section__btns-group--no-mg">
+						<a href="https://devstarsonline.com/booking" target="_blank" class="section__btn button-text prm-button prm-button--big-pd">
+							Book a free strategy call
+						</a>
+					</div>
+				</div>
+				<div id="advantages" class="section section--pd-vertical section--pd">
+					<div class="section__card section__card--big-mg section__card--center section__card--big-pd section__card--with-bg">
+						<div class="section__card-text-wrap">
+							<div class="section__card-value section__card-value--white-color section__card-value--center section__card-value--mg h2-text">
+								Конструктор персональной аналитики
+							</div>
+							<div class="section__card-desc section__card-desc--white-color section__card-desc--center section__card-desc--mg body1-text">
+								Если вам нужен отчет по индивидуальным параметрам, воспользуйтесь конструктором персональной аналитики
+							</div>
+						</div>
+						<a href="https://devstarsonline.com/booking" target="_blank" class="section__card-button button-text prm-button prm-button--big-pd prm-button--white--bg">
+							Book a free strategy call
+						</a>
+					</div>
+					<h2 class="section__title h2-text">
+						Преимущества Аналитики Meatinfo
+					</h2>
+					<div class="section__cards-field">
+						<div class="section__card section__card--grey-bg section__card--big-pd">
+							<div class="section__card-icon">
+								<img src="img/icon_database.svg" alt="Логотип база данных">
+							</div>
+							<div class="section__card-value h4-text">
+								Уникальная база данных
+							</div>
+							<div class="section__card-desc body2-text">
+								База данных информационного портала meatinfo.ru, а также анализ других источников по ценам, эпизоотии, импорту, экспорту и др. показателям мясной отрасли.
+							</div>
+						</div>
+						<div class="section__card section__card--grey-bg section__card--big-pd">
+							<div class="section__card-icon">
+								<img src="img/icon_brain.svg" alt="Логотип мозги">
+							</div>
+							<div class="section__card-value h4-text">
+								Использование искусственного интеллекта
+							</div>
+							<div class="section__card-desc body2-text">
+								Глубокий анализ и высокая точность прогнозирования за счет применения технологий искусственного интеллекта и машинного обучения.
+							</div>
+						</div>
+						<div class="section__card section__card--grey-bg section__card--big-pd">
+							<div class="section__card-icon">
+								<img src="img/icon_wrench.svg" alt="Логотип ключ">
+							</div>
+							<div class="section__card-value h4-text">
+								Учет индивидуальных потребностей
+							</div>
+							<div class="section__card-desc body2-text">
+								Если в отчете отсутствуют нужные данные, его можно изменить, чтобы он соответствовал конкретным требованиям и удовлетворял индивидуальные цели и потребности в информации.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="cases" class="section section--pd-vertical section--pd section--blue-bg">
+					<h2 class="section__title section__title--white-color h2-text">
+						Результаты наших клиентов
+					</h2>
+					<div class="section__description section__description--white-color body2-text">
+						Интеграции конкретных показателей аналитики в формулу планирования прибыли компании
+					</div>
+					<div class="section__slider">
+						<div class="results-swiper swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="swiper-slide__card">
+										<div class='swiper-slide__card-head'>
+											<div class="swiper-slide__card-title h4-text">
+												За 1 год прирост прибыли 18%
+											</div>
+											<div class="swiper-slide__card-text body2-text">
+												Мясоперерабатывающий комплекс
+											</div>
+										</div>
+										<div class="swiper-slide__body">
+											<div class="swiper-slide__body-field">
+												<div class="swiper-slide__body-title h4-text">
+													<span class="body2-text swiper-slide__body-title--red">До</span>Задача клиента
+												</div>
+												<div class="swiper-slide__card-text body2-text">
+													Расширение компании, за счет изменения модели планирования.<br><br>
+													<b>Задача 1</b>: Уйти от ретроспективного метода планирования развития к объективному. Ранее мы пользовались только внутренней аналитикой  компании, основанной на  анализе предыдущих лет деятельности предприятия.<br>
+													<b>Задача 2</b>: выбрать источник объективных показателей рынка аналитики.<br>
+												</div>
+											</div>
+											<div class="swiper-slide__body-field">
+												<div class="swiper-slide__body-title h4-text">
+													<span class="body2-text swiper-slide__body-title--green">После</span>Решение
+												</div>
+												<div class="swiper-slide__card-text body2-text">
+													<b>Решение 1</b>: Выведены формулы декомпозиции задач с внесением неизвестных аналитики рынка. Они содержат цифры многих показателей рынка, ценовых прогнозов в стране за рубежом.
+													Исторические цифры нашего предприятия такими данными не располагали. 
+													<br>
+													<b>Решение 2</b>: Запросили у компаний, формирующих аналитику примеры отчетов предыдущих лет, сравнили совпадения и приняли решение внедрить аналитические отчеты meatinfo.ru. в связи с высоким процентом совпадения прогнозов.
+													В результате имеем стабильный уверенный рост показателей и доходности.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-slide__card">
+										<div class='swiper-slide__card-head'>
+											<div class="swiper-slide__card-title h4-text">
+												За 2 года увеличили производственные мощности на 45%
+											</div>
+											<div class="swiper-slide__card-text body2-text">
+												Агрохолдинг 
+											</div>
+										</div>
+										<div class="swiper-slide__body">
+											<div class="swiper-slide__body-field">
+												<div class="swiper-slide__body-title h4-text">
+													<span class="body2-text swiper-slide__body-title--red">До</span>Задача клиента
+												</div>
+												<div class="swiper-slide__card-text body2-text">
+													Перед лидером компании возникли задачи поиска точек роста, и поиска средств на реализацию этих процессов.
+													Наращивание объема производства требует инвестиций. Например строительство складов, цехов, покупка оборудования. 
+													<br>
+													<br>
+													Рычаги до прибыли:
+													<br>
+													<b>-</b> в маркетинге;<br>
+													<b>-</b> способах реализации продукции;<br>
+													<b>-</b> механизмов закупа сырья<br>
+													<br>
+													Сырые решения не подходят - велика вероятность слить цели, а если ждать, пока инсайт станет стандартом в мясной индустрии, то кто-то освоит нишу раньше и овладеет конкурентным преимуществом.												</div>
+											</div>
+											<div class="swiper-slide__body-field">
+												<div class="swiper-slide__body-title h4-text">
+													<span class="body2-text swiper-slide__body-title--green">После</span>Решение
+												</div>
+												<div class="swiper-slide__card-text body2-text">
+													Взяли за основу западную модель. Приняли решение распределить нагрузку через ввод более востребованной продуктовые линейки, и кредитного займа. Риски неуспеха были. Их минимизировали за счет предиктивных моделей в мясном секторе. Планировали продуктовую линейку исходя из прогнозов аналитики платформы meatinfo.ru. 
+													<br><br>
+													Итог первого года: <br>
+													<b>-</b> график внедрения новых решений движется вверх даже в непростых условиях рынка.<br>
+													<b>-</b> общая PNL(прибыль) компании растет.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-slide__card">
+										<div class='swiper-slide__card-head'>
+											<div class="swiper-slide__card-title h4-text">
+												За 6 месяцев - экономия средств на 37%
+											</div>
+											<div class="swiper-slide__card-text body2-text">
+												Дистрибьюторская сеть
+											</div>
+										</div>
+										<div class="swiper-slide__body">
+											<div class="swiper-slide__body-field">
+												<div class="swiper-slide__body-title h4-text">
+													<span class="body2-text swiper-slide__body-title--red">До</span>Задача клиента
+												</div>
+												<div class="swiper-slide__card-text body2-text">
+													<b>Задача 1</b>:Снижение конкурентной борьбы.
+													<br>
+													<br>
+													<b>Задача 2</b>:Оптимизация затрат на производстве 
+													<br><br>
+													<b>Задача 3</b>:Соответствие рыночному спросу
+													<br><br>
+													<b>Задача 4</b>:Снижение валютных рисков 
+													<br><br>
+													Для перечисленных стандартных задач, мы искали нестандартные и инновационные решения.
+												</div>
+											</div>
+											<div class="swiper-slide__body-field">
+												<div class="swiper-slide__body-title h4-text">
+													<span class="body2-text swiper-slide__body-title--green">После</span>Решение
+												</div>
+												<div class="swiper-slide__card-text body2-text">
+													<b>1. Конкуренция</b>:<br>
+													За счет аналитики занимается растущая ниша, тем вместо борьбы в  “кровавом океане” занимаемся реализацией в комфортных условиях<br>
+													<b>2. Оптимизация затрат</b>:<br>
+													Определяются и регулируются перспективы производственных затрат, с опорой на аналитику meatinfo.ru<br>
+													<b>3. Соответствие рынку</b>:<br>
+													Структура потребления мяса меняется. Располагая прогнозами, используем более рационально мощности производства, производим более востребованный продукт.<br>
+													<b>4. Валютные риски</b>:<br>
+													Аналитика импорта и тенденций за рубежом позволяют вносить коррективы в деятельность производства за границей.
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper__nav">
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-pagination swiper-pagination--white-color"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="section section--pd-vertical section--pd">
+					<h2 class="section__title h2-text">
+						Мы запустили каналы в соцсетях
+					</h2>
+					<div class="section__description body2-text">
+						Подписывайтесь и получайте бесплатные аналитические срезы по различным отраслям с/х рынка
+					</div>
+					<div class="section__cards-field">
+						<div class="section__card section__card--flex section__card--grey-bg section__card--big-pd">
+							<div class='section__card-field section__card-field--flex'>
+								<div class="section__card-icon">
+									<img src="img/icon_telegram-solid.svg" alt="Логотип Telegram">
+								</div>
+								<div class="section__card-value h3-text">
+									Телеграм-канал
+								</div>
+							</div>
+							<div class="section__card-desc section__card-desc--mg body2-text">
+								Мировые события, тренды и еженедельные отчеты по рынку мяса от meatinfo.ru
+							</div>
+							<div class="section__card-icon section__card-icon--right">
+								<a href="https://t.me/predictiveanalytic" target="_blank"><img src="img/icon_arrow_out.svg" alt="Иконка стрелочки"></a>
+							</div>
+						</div>
+						<div class="section__card section__card--flex section__card--grey-bg section__card--big-pd">
+							<div class="section__card-field">
+								<div class="section__card-icon">
+									<img src="img/icon_yandex_music.svg" alt="Логотип Яндекс Музыка">
+								</div>
+								<div class="section__card-value h3-text">
+									Яндекс Музыка
+								</div>
+							</div>
+							<div class="section__card-desc section__card-desc--mg body2-text">
+								Подкасты о практической стороне применения аналитики meatinfo.ru
+							</div>
+							<div class="section__card-icon section__card-icon--right">
+								<a href="https://music.yandex.ru/album/25991669?dir=desc&activeTab=about" target="_blank"><img src="img/icon_arrow_out.svg" alt="Иконка стрелочки"></a>
+							</div>
+						</div>
+						<div class="section__card section__card--flex section__card--grey-bg section__card--big-pd">
+							<div class="section__card-field">
+								<div class="section__card-icon">
+									<img src="img/icon_rutube_minilogo.svg" alt="Логотип RuRube">
+								</div>
+								<div class="section__card-value h3-text">
+									Rutube
+								</div>
+							</div>
+							<div class="section__card-desc section__card-desc--mg body2-text">
+								Кейсы компаний по применению аналитики, обсуждение формул интеграции аналитики в планирование, масштабные события.
+							</div>
+							<div class="section__card-icon section__card-icon--right">
+								<a href="https://rutube.ru/channel/27181518/" target="_blank"><img src="img/icon_arrow_out.svg" alt="Иконка стрелочки"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="faq" class="section section--pd-vertical section--pd-no-top">
+					<h2 class="section__title h2-text">
+						Ответы на частые вопросы
+					</h2>
+					<div class="section__spoiler-field">
+						<div class="section__spoiler-head">
+							<div class="section__spoiler-title h4-text">
+								Какие источники используются для формирования аналитических отчетов meatinfo ?
+							</div>
+							<button class="section__spoiler-head-button js-spoiler-button">
+								
+							</button>
+						</div>
+						<div class="section__spoiler-body body1-text">
+							&#183; Федеральная служба государственной статистики;<br>
+							&#183; Единая межведомственная информационно-статистическая система;<br>
+							&#183; Министерство сельского хозяйства; <br>
+							&#183; Россельхознадзор; <br>
+							&#183; ФТС; <br>
+							&#183; ЕЭС и ТС; <br>
+							&#183; Аналитический центр ВТО-информ; <br>
+							&#183; Министерство сельского хозяйства США и других стран; <br>
+							&#183; ФАО, Евростат; <br>
+							&#183; Информационный портал Meatinfo.ru <br>
+							&#183; СМИ;<br>
+							&#183; Тематические информационные порталы.<br>
+						</div>
+					</div>
+					<div class="section__spoiler-field">
+						<div class="section__spoiler-head">
+							<div class="section__spoiler-title h4-text">
+								Как формируются предиктивные цифры аналитических отчетов?
+							</div>
+							<button class="section__spoiler-head-button js-spoiler-button">
+								
+							</button>
+						</div>
+						<div class="section__spoiler-body body1-text">
+							Из источников собираются большие массивы цифр за нужные периоды рынка. Затем цифры загружаются и  анализируются с помощью AI. Учитывается, как реагирует рынок на сезонность, как реагирует на мировые события и т.д.
+							Затем отчеты перепроверяются аналитическим отделом и собираются в готовый продукт с прогнозами и закономерностями рынка.
+						</div>
+					</div>
+					<div class="section__spoiler-field">
+						<div class="section__spoiler-head">
+							<div class="section__spoiler-title h4-text">
+								Какова точность прогнозируемых показателей?
+							</div>
+							<button class="section__spoiler-head-button js-spoiler-button">
+								
+							</button>
+						</div>
+						<div class="section__spoiler-body body1-text">
+							Точность зависит от конкретных показателей и варьируется от 78 до 96 %. Если вы возьмете прогнозы за 2021-2022 год, то увидите, что совпадение отчетов именно в таком диапазоне.
+						</div>
+					</div>
+					<div class="section__spoiler-field">
+						<div class="section__spoiler-head">
+							<div class="section__spoiler-title h4-text">
+								Для чего аналитические отчеты meatinfo приобретают инвестиционные и банковские системы?
+							</div>
+							<button class="section__spoiler-head-button js-spoiler-button">
+								
+							</button>
+						</div>
+						<div class="section__spoiler-body body1-text">
+							Банки, принимая решение о кредитации аграрной компании, выясняют прогноз по рынку и сверяют его с бизнес-планом этого предприятия. Тем самым  минимизируют собственные риски. Благодаря аналитическим прогнозам, предсказывается вероятность выплат по кредитным обязательствам в конкретном случае.
+							<br>
+							Инвесторы так же  анализируют рентабельность предприятий, сверяя с независимым мнением аналитики. Это позволяет получать максимальную выгоду от инвестиций.						</div>
+					</div>
+					<div class="section__spoiler-field">
+						<div class="section__spoiler-head">
+							<div class="section__spoiler-title h4-text">
+								Кто чаще всего приобретает аналитику у meatinfo?
+							</div>
+							<button class="section__spoiler-head-button js-spoiler-button">
+								
+							</button>
+						</div>
+						<div class="section__spoiler-body body1-text">
+							&#183; Фермерские хозяйства<br>
+							&#183; Перерабатывающие предприятия<br>
+							&#183; Дистрибьюторские организации<br>
+							&#183; Банки<br>
+							&#183; Аналитические организации<br>
+							&#183; Сети Foodretail<br>
+							&#183; Сегмент HoReCa <br>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer class="footer">
+				<div class="footer__container">
+					<div class="footer__top">
+						<div class="footel__imgs-field">
+							<img src="img/logo.svg" alt="Логотип Meatinfo" class="footer__logo">
+							<div class="footer__logo-field">
+								<div class="footer__logo">
+									<a href="https://t.me/predictiveanalytic" target="_blank"><img src="img/icon_telegram.svg" alt="Логотип Telegram"></a>
+								</div>
+								<div class="footer__logo">
+									<a href="https://vk.com" target="_blank"><img src="img/icon_vk.svg" alt="Логотип Вконтакте"></a>
+								</div>
+								<div class="footer__logo">
+									<a href="https://https://dzen.ru/" target="_blank"><img src="img/icon_yandex-zen.svg" alt="Логотип Яндекс Дзен"></a>
+								</div>
+								<div class="footer__logo">
+									<a href="https://music.yandex.ru/album/25991669?activeTab=track-list" target="_blank"><img src="img/icon_yandex_music.svg" alt="Логотип Яндекс Музыка"></a>
+								</div>
+								<div class="footer__logo">
+									<a href="https://rutube.ru/channel/27181518/" target="_blank"><img src="img/icon_rutube.svg" alt="Логотип RuTube"></a>
+								</div>
+							</div>
+						</div>
+						<div class="footer__text-field">
+							<div class="footer__text body2-text">
+								Отдел продаж
+							</div>
+							<div class="footer__value body1-text">
+								<a href="+78124253265">+7 812 425-32-65</a>
+							</div>
+							<div class="footer__value body1-text">
+								<a href="mail:sale@inline-ltd.ru">sale@inline-ltd.ru</a>
+							</div>
+						</div>
+						<div class="footer__text-field">
+							<div class="footer__text body2-text">
+								По вопросам рекламы
+							</div>
+							<div class="footer__value body1-text">
+								<a href='tel:+78124253265'>+7 812 425-32-65</a>
+							</div>
+							<div class="footer__value body1-text">
+								<a href="mail:a.zelenova@inline-ltd.ru">a.zelenova@inline-ltd.ru</a>
+							</div>
+						</div>
+					</div>
+					<div class="footer__copyright">
+						<div class="footer__text body2-text">
+							<a class="footer__link" href="" target="_blank">Политика конфиденциальности</a>
+						</div>
+						<div class="footer__text body2-text">
+							© 2008-2023 meatinfo.ru
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+</html>
+
+
+
+
